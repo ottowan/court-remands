@@ -1,7 +1,7 @@
 package main
 import "testing"
 
-func Test_CheckRemandsDateProvincial_Input_0imprisonDate_ShouldBe_True(t *testing.T) {
+func Test_CheckRemandsDateProvincial_Input_10year_0imprisonDate_ShouldBe_True(t *testing.T) {
 	input := 0
 	expected := false
 	actual := imprison_date(input)
@@ -11,7 +11,7 @@ func Test_CheckRemandsDateProvincial_Input_0imprisonDate_ShouldBe_True(t *testin
 	}
 }
 
-func Test_CheckRemandsDateProvincial_Input_1imprisonDate_ShouldBe_True(t *testing.T) {
+func Test_CheckRemandsDateProvincial_Input_10year_1imprisonDate_ShouldBe_True(t *testing.T) {
 	input := 1
 	expected := true
 	actual := imprison_date(input)
@@ -21,7 +21,7 @@ func Test_CheckRemandsDateProvincial_Input_1imprisonDate_ShouldBe_True(t *testin
 	}
 }
 
-func Test_CheckRemandsDateProvincial_Input_10imprisonDate_ShouldBe_True(t *testing.T) {
+func Test_CheckRemandsDateProvincial_Input_10year_10imprisonDate_ShouldBe_True(t *testing.T) {
 	input := 10
 	expected := true
 	actual := imprison_date(input)
@@ -31,7 +31,7 @@ func Test_CheckRemandsDateProvincial_Input_10imprisonDate_ShouldBe_True(t *testi
 	}
 }
 
-func Test_CheckRemandsDateProvincial_Input_15imprisonDate_ShouldBe_True(t *testing.T) {
+func Test_CheckRemandsDateProvincial_Input_10year_15imprisonDate_ShouldBe_True(t *testing.T) {
 	input := 15
 	expected := false
 	actual := imprison_date(input)
