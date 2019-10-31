@@ -30,7 +30,7 @@ func Test_CheckFineRateKwaeng_Input_fine_60001_ShouldBe_False(t *testing.T) {
 	}
 }
 
-//Test CheckFineRateProvincial
+//Test CheckFineRateProvincial()
 func Test_CheckFineRateProvincial_Input_fine_minus1_ShouldBe_False(t *testing.T) {
 	input := -1
 	expected := false
