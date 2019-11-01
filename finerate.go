@@ -9,5 +9,11 @@ func CheckFineRateKwaeng(input int) bool {
 }
 
 func CheckFineRateProvincial(input int) int {
+
+	if input > -1 && input <= 500 {
+		return 1
+	} else if input > 500 {
+		return 2
+	}
 	return 0
 }

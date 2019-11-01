@@ -47,16 +47,6 @@ func Test_CheckFineRateProvincial(t *testing.T) {
 		}
 	})
 
-	t.Run("input 0 bath ShouldBe 1", func(t *testing.T) {
-		input := 0
-		expected := 1
-		actual := CheckFineRateProvincial(input)
-
-		if expected != actual {
-			t.Errorf("T25 : expected %v but it got %v", expected, actual)
-		}
-	})
-
 	t.Run("input 300 bath ShouldBe 1", func(t *testing.T) {
 		input := 300
 		expected := 1
