@@ -1,5 +1,5 @@
 package main
 
-func CheckCourtType(input int) bool {
-	return true
+func CheckCourtType(input string) bool {
+	return false
 }

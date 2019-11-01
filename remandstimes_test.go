@@ -8,7 +8,7 @@ func Test_CheckRemandsTimesKwaeng_Input_0imprisonNo_ShouldBe_True(t *testing.T) 
 	actual := CheckRemandsTimesKwaeng(input)
 
 	if expected != actual {
-		t.Errorf("T10 :expected %s but it got %s", expected, actual)
+		t.Errorf("T10 :expected %v but it got %v", expected, actual)
 	}
 }
 
@@ -18,7 +18,7 @@ func Test_CheckRemandsTimesKwaeng_Input_6imprisonNo_ShouldBe_True(t *testing.T) 
 	actual := CheckRemandsTimesKwaeng(input)
 
 	if expected != actual {
-		t.Errorf("T11 :expected %s but it got %s", expected, actual)
+		t.Errorf("T11 :expected %v but it got %v", expected, actual)
 	}
 }
 
@@ -28,7 +28,7 @@ func Test_CheckRemandsTimesKwaeng_Input_3imprisonNo_ShouldBe_True(t *testing.T) 
 	actual := CheckRemandsTimesKwaeng(input)
 
 	if expected != actual {
-		t.Errorf("T12 :expected %s but it got %s", expected, actual)
+		t.Errorf("T12 :expected %v but it got %v", expected, actual)
 	}
 }
 
@@ -39,7 +39,7 @@ func Test_CheckRemandsTimesProvincial_Input_6month_0imprisonNo_ShouldBe_True(t *
 	actual := CheckRemandsTimesProvincial(input)
 
 	if expected != actual {
-		t.Errorf("T31 :expected %s but it got %s", expected, actual)
+		t.Errorf("T31 :expected %v but it got %v", expected, actual)
 	}
 }
 func Test_CheckRemandsTimesProvincial_Input_6month_1imprisonNo_ShouldBe_True(t *testing.T) {
@@ -48,7 +48,7 @@ func Test_CheckRemandsTimesProvincial_Input_6month_1imprisonNo_ShouldBe_True(t *
 	actual := CheckRemandsTimesProvincial(input)
 
 	if expected != actual {
-		t.Errorf("T32 :expected %s but it got %s", expected, actual)
+		t.Errorf("T32 :expected %v but it got %v", expected, actual)
 	}
 }
 func Test_CheckRemandsTimesProvincial_Input_Max10year_2imprisonNo_ShouldBe_True(t *testing.T) {
@@ -57,7 +57,7 @@ func Test_CheckRemandsTimesProvincial_Input_Max10year_2imprisonNo_ShouldBe_True(
 	actual := CheckRemandsTimesProvincial(input)
 
 	if expected != actual {
-		t.Errorf("T33 :expected %s but it got %s", expected, actual)
+		t.Errorf("T33 :expected %v but it got %v", expected, actual)
 	}
 }
 
@@ -68,7 +68,7 @@ func Test_CheckRemandsTimesProvincial_Input_10year_0imprisonNo_ShouldBe_True(t *
 	actual := CheckRemandsTimesProvincial(input)
 
 	if expected != actual {
-		t.Errorf("T34 :expected %s but it got %s", expected, actual)
+		t.Errorf("T34 :expected %v but it got %v", expected, actual)
 	}
 }
 func Test_CheckRemandsTimesProvincial_Input_10year_1imprisonNo_ShouldBe_True(t *testing.T) {
@@ -77,7 +77,7 @@ func Test_CheckRemandsTimesProvincial_Input_10year_1imprisonNo_ShouldBe_True(t *
 	actual := CheckRemandsTimesProvincial(input)
 
 	if expected != actual {
-		t.Errorf("T35 :expected %s but it got %s", expected, actual)
+		t.Errorf("T35 :expected %v but it got %v", expected, actual)
 	}
 }
 func Test_CheckRemandsTimesProvincial_Input_10year_5imprisonNo_ShouldBe_True(t *testing.T) {
@@ -86,7 +86,7 @@ func Test_CheckRemandsTimesProvincial_Input_10year_5imprisonNo_ShouldBe_True(t *
 	actual := CheckRemandsTimesProvincial(input)
 
 	if expected != actual {
-		t.Errorf("T36 :expected %s but it got %s", expected, actual)
+		t.Errorf("T36 :expected %v but it got %v", expected, actual)
 	}
 }
 
@@ -97,7 +97,7 @@ func Test_CheckRemandsTimesProvincial_Input_Max10year_0imprisonNo_ShouldBe_True(
 	actual := CheckRemandsTimesProvincial(input)
 
 	if expected != actual {
-		t.Errorf("T40 :expected %s but it got %s", expected, actual)
+		t.Errorf("T40 :expected %v but it got %v", expected, actual)
 	}
 }
 func Test_CheckRemandsTimesProvincial_Input_Max10year_1imprisonNo_ShouldBe_True(t *testing.T) {
@@ -106,7 +106,7 @@ func Test_CheckRemandsTimesProvincial_Input_Max10year_1imprisonNo_ShouldBe_True(
 	actual := CheckRemandsTimesProvincial(input)
 
 	if expected != actual {
-		t.Errorf("T41 :expected %s but it got %s", expected, actual)
+		t.Errorf("T41 :expected %v but it got %v", expected, actual)
 	}
 }
 func Test_CheckRemandsTimesProvincial_Input_Max10year_5imprisonNo_ShouldBe_True(t *testing.T) {
@@ -115,7 +115,7 @@ func Test_CheckRemandsTimesProvincial_Input_Max10year_5imprisonNo_ShouldBe_True(
 	actual := CheckRemandsTimesProvincial(input)
 
 	if expected != actual {
-		t.Errorf("T42 :expected %s but it got %s", expected, actual)
+		t.Errorf("T42 :expected %v but it got %v", expected, actual)
 	}
 }
 func Test_CheckRemandsTimesProvincial_Input_Max10year_8imprisonNo_ShouldBe_True(t *testing.T) {
@@ -124,6 +124,6 @@ func Test_CheckRemandsTimesProvincial_Input_Max10year_8imprisonNo_ShouldBe_True(
 	actual := CheckRemandsTimesProvincial(input)
 
 	if expected != actual {
-		t.Errorf("T43 :expected %s but it got %s", expected, actual)
+		t.Errorf("T43 :expected %v but it got %v", expected, actual)
 	}
 }
