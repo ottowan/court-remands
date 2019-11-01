@@ -1,3 +1,5 @@
+// +build systemtest
+
 package main
 
 import (

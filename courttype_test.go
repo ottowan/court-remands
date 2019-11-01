@@ -4,9 +4,9 @@ import "testing"
 
 func Test_CheckCourtType(t *testing.T) {
 
-	t.Run("input kweang ShouldBe true", func(t *testing.T) {
+	t.Run("input kweang ShouldBe 1", func(t *testing.T) {
 		input := "kwaeng"
-		expected := true
+		expected := 1
 		actual := CheckCourtType(input)
 
 		if expected != actual {
@@ -14,9 +14,9 @@ func Test_CheckCourtType(t *testing.T) {
 		}
 	})
 
-	t.Run("input provincial ShouldBe true", func(t *testing.T) {
+	t.Run("input provincial ShouldBe 2", func(t *testing.T) {
 		input := "provincial"
-		expected := true
+		expected := 2
 		actual := CheckCourtType(input)
 
 		if expected != actual {
@@ -24,9 +24,9 @@ func Test_CheckCourtType(t *testing.T) {
 		}
 	})
 
-	t.Run("input empty ShouldBe false", func(t *testing.T) {
+	t.Run("input empty ShouldBe 0", func(t *testing.T) {
 		input := ""
-		expected := false
+		expected := 0
 		actual := CheckCourtType(input)
 
 		if expected != actual {

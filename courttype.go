@@ -1,11 +1,11 @@
 package main
 
-func CheckCourtType(input string) bool {
+func CheckCourtType(input string) int {
 	if input == "kwaeng" {
-		return true
+		return 1
 	} else if input == "provincial" {
 
-		return true
+		return 2
 	}
-	return false
+	return 0
 }

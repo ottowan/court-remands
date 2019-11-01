@@ -12,6 +12,7 @@ func GetMainEngine() *gin.Engine {
 	v1 := r.Group("/v1")
 	{
 		v1.GET("/ping", ping)
+		//v1.POST("/")
 	}
 	return r
 }
