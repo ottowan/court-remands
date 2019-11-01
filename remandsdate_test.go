@@ -14,16 +14,6 @@ func Test_CheckRemandsDateKwaeng(t *testing.T) {
 		}
 	})
 
-	t.Run("input 7 day ShouldBe false", func(t *testing.T) {
-		input := 7
-		expected := false
-		actual := CheckRemandsDateKwaeng(input)
-
-		if expected != actual {
-			t.Errorf("T14 : expected %v but it got %v", expected, actual)
-		}
-	})
-
 	t.Run("input 5 day ShouldBe true", func(t *testing.T) {
 		input := 5
 		expected := true
@@ -31,6 +21,16 @@ func Test_CheckRemandsDateKwaeng(t *testing.T) {
 
 		if expected != actual {
 			t.Errorf("T15 : expected %v but it got %v", expected, actual)
+		}
+	})
+
+	t.Run("input 7 day ShouldBe false", func(t *testing.T) {
+		input := 7
+		expected := false
+		actual := CheckRemandsDateKwaeng(input)
+
+		if expected != actual {
+			t.Errorf("T14 : expected %v but it got %v", expected, actual)
 		}
 	})
 }
@@ -47,9 +47,9 @@ func Test_CheckRemandsDateLessRateProvincial(t *testing.T) {
 		}
 	})
 
-	t.Run("input 3 day ShouldBe false", func(t *testing.T) {
+	t.Run("input 3 day ShouldBe true", func(t *testing.T) {
 		input := 3
-		expected := false
+		expected := true
 		actual := CheckRemandsDateLessRateProvincial(input)
 
 		if expected != actual {
@@ -57,9 +57,9 @@ func Test_CheckRemandsDateLessRateProvincial(t *testing.T) {
 		}
 	})
 
-	t.Run("input 8 day ShouldBe true", func(t *testing.T) {
+	t.Run("input 8 day ShouldBe false", func(t *testing.T) {
 		input := 8
-		expected := true
+		expected := false
 		actual := CheckRemandsDateLessRateProvincial(input)
 
 		if expected != actual {
@@ -77,16 +77,6 @@ func Test_CheckRemandsDateMiddleRateProvincial(t *testing.T) {
 
 		if expected != actual {
 			t.Errorf("T36 : expected %v but it got %v", expected, actual)
-		}
-	})
-
-	t.Run("input 1 day ShouldBe false", func(t *testing.T) {
-		input := 1
-		expected := false
-		actual := CheckRemandsDateMiddleRateProvincial(input)
-
-		if expected != actual {
-			t.Errorf("T37 : expected %v but it got %v", expected, actual)
 		}
 	})
 
@@ -120,16 +110,6 @@ func Test_CheckRemandsDateTopRateProvincial(t *testing.T) {
 
 		if expected != actual {
 			t.Errorf("T44 : expected %v but it got %v", expected, actual)
-		}
-	})
-
-	t.Run("input 1 day ShouldBe false", func(t *testing.T) {
-		input := 1
-		expected := false
-		actual := CheckRemandsDateTopRateProvincial(input)
-
-		if expected != actual {
-			t.Errorf("T45 : expected %v but it got %v", expected, actual)
 		}
 	})
 
