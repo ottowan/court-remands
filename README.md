@@ -27,3 +27,8 @@
 
   [Reference]
     https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/arrays-and-slices
+
+
+
+	body, _ := ioutil.ReadAll(c.Request.Body)
+	fmt.Println(string(body))
