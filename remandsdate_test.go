@@ -2,142 +2,154 @@ package main
 
 import "testing"
 
-//CheckRemandsDateKwaeng
-func Test_CheckRemandsDateKwaeng_Input_0imprisonDate_ShouldBe_True(t *testing.T) {
-	input := 0
-	expected := false
-	actual := CheckRemandsDateKwaeng(input)
+func Test_CheckRemandsDateKwaeng(t *testing.T) {
 
-	if expected != actual {
-		t.Errorf("T13 :expected %v but it got %v", expected, actual)
-	}
+	t.Run("input 0 day ShouldBe false", func(t *testing.T) {
+		input := 0
+		expected := false
+		actual := CheckRemandsDateKwaeng(input)
+
+		if expected != actual {
+			t.Errorf("T13 : expected %v but it got %v", expected, actual)
+		}
+	})
+
+	t.Run("input 7 day ShouldBe false", func(t *testing.T) {
+		input := 7
+		expected := false
+		actual := CheckRemandsDateKwaeng(input)
+
+		if expected != actual {
+			t.Errorf("T14 : expected %v but it got %v", expected, actual)
+		}
+	})
+
+	t.Run("input 5 day ShouldBe true", func(t *testing.T) {
+		input := 5
+		expected := true
+		actual := CheckRemandsDateKwaeng(input)
+
+		if expected != actual {
+			t.Errorf("T15 : expected %v but it got %v", expected, actual)
+		}
+	})
 }
 
-func Test_CheckRemandsDateKwaeng_Input_7imprisonDate_ShouldBe_True(t *testing.T) {
-	input := 7
-	expected := false
-	actual := CheckRemandsDateKwaeng(input)
+func Test_CheckRemandsDateLessRateProvincial(t *testing.T) {
 
-	if expected != actual {
-		t.Errorf("T14 :expected %v but it got %v", expected, actual)
-	}
+	t.Run("input 0 day ShouldBe false", func(t *testing.T) {
+		input := 0
+		expected := false
+		actual := CheckRemandsDateLessRateProvincial(input)
+
+		if expected != actual {
+			t.Errorf("T28 : expected %v but it got %v", expected, actual)
+		}
+	})
+
+	t.Run("input 3 day ShouldBe false", func(t *testing.T) {
+		input := 3
+		expected := false
+		actual := CheckRemandsDateLessRateProvincial(input)
+
+		if expected != actual {
+			t.Errorf("T29 : expected %v but it got %v", expected, actual)
+		}
+	})
+
+	t.Run("input 8 day ShouldBe true", func(t *testing.T) {
+		input := 8
+		expected := true
+		actual := CheckRemandsDateLessRateProvincial(input)
+
+		if expected != actual {
+			t.Errorf("T30 : expected %v but it got %v", expected, actual)
+		}
+	})
 }
 
-func Test_CheckRemandsDateKwaeng_Input_5imprisonDate_ShouldBe_True(t *testing.T) {
-	input := 5
-	expected := false
-	actual := CheckRemandsDateKwaeng(input)
+func Test_CheckRemandsDateMiddleRateProvincial(t *testing.T) {
 
-	if expected != actual {
-		t.Errorf("T15 :expected %v but it got %v", expected, actual)
-	}
+	t.Run("input 0 day ShouldBe false", func(t *testing.T) {
+		input := 0
+		expected := false
+		actual := CheckRemandsDateMiddleRateProvincial(input)
+
+		if expected != actual {
+			t.Errorf("T36 : expected %v but it got %v", expected, actual)
+		}
+	})
+
+	t.Run("input 1 day ShouldBe false", func(t *testing.T) {
+		input := 1
+		expected := false
+		actual := CheckRemandsDateMiddleRateProvincial(input)
+
+		if expected != actual {
+			t.Errorf("T37 : expected %v but it got %v", expected, actual)
+		}
+	})
+
+	t.Run("input 8 day ShouldBe true", func(t *testing.T) {
+		input := 8
+		expected := true
+		actual := CheckRemandsDateMiddleRateProvincial(input)
+
+		if expected != actual {
+			t.Errorf("T38 : expected %v but it got %v", expected, actual)
+		}
+	})
+
+	t.Run("input 13 day ShouldBe false", func(t *testing.T) {
+		input := 13
+		expected := false
+		actual := CheckRemandsDateMiddleRateProvincial(input)
+
+		if expected != actual {
+			t.Errorf("T39 : expected %v but it got %v", expected, actual)
+		}
+	})
 }
 
-//CheckRemandsDateProvincial_6month
-func Test_CheckRemandsDateProvincial_Input_6month_0imprisonDate_ShouldBe_True(t *testing.T) {
-	input := 0
-	expected := false
-	actual := CheckRemandsDateProvincial(input)
+func Test_CheckRemandsDateTopRateProvincial(t *testing.T) {
 
-	if expected != actual {
-		t.Errorf("T28 :expected %v but it got %v", expected, actual)
-	}
-}
+	t.Run("input 0 day ShouldBe false", func(t *testing.T) {
+		input := 0
+		expected := false
+		actual := CheckRemandsDateTopRateProvincial(input)
 
-func Test_CheckRemandsDateProvincial_Input_6month_3imprisonDate_ShouldBe_True(t *testing.T) {
-	input := 3
-	expected := true
-	actual := CheckRemandsDateProvincial(input)
+		if expected != actual {
+			t.Errorf("T44 : expected %v but it got %v", expected, actual)
+		}
+	})
 
-	if expected != actual {
-		t.Errorf("T29 :expected %v but it got %v", expected, actual)
-	}
-}
-func Test_CheckRemandsDateProvincial_Input_6month_8imprisonDate_ShouldBe_True(t *testing.T) {
-	input := 8
-	expected := false
-	actual := CheckRemandsDateProvincial(input)
+	t.Run("input 1 day ShouldBe false", func(t *testing.T) {
+		input := 1
+		expected := false
+		actual := CheckRemandsDateTopRateProvincial(input)
 
-	if expected != actual {
-		t.Errorf("T30 :expected %v but it got %v", expected, actual)
-	}
-}
+		if expected != actual {
+			t.Errorf("T45 : expected %v but it got %v", expected, actual)
+		}
+	})
 
-//CheckRemandsDateProvincial_10year
-func Test_CheckRemandsDateProvincial_Input_10year_0imprisonDate_ShouldBe_True(t *testing.T) {
-	input := 0
-	expected := false
-	actual := CheckRemandsDateProvincial(input)
+	t.Run("input 8 day ShouldBe true", func(t *testing.T) {
+		input := 8
+		expected := true
+		actual := CheckRemandsDateTopRateProvincial(input)
 
-	if expected != actual {
-		t.Errorf("T36 :expected %v but it got %v", expected, actual)
-	}
-}
-func Test_CheckRemandsDateProvincial_Input_10year_1imprisonDate_ShouldBe_True(t *testing.T) {
-	input := 1
-	expected := true
-	actual := CheckRemandsDateProvincial(input)
+		if expected != actual {
+			t.Errorf("T46 : expected %v but it got %v", expected, actual)
+		}
+	})
 
-	if expected != actual {
-		t.Errorf("T37 :expected %v but it got %v", expected, actual)
-	}
-}
-func Test_CheckRemandsDateProvincial_Input_10year_11imprisonDate_ShouldBe_True(t *testing.T) {
-	input := 11
-	expected := true
-	actual := CheckRemandsDateProvincial(input)
+	t.Run("input 13 day ShouldBe false", func(t *testing.T) {
+		input := 13
+		expected := false
+		actual := CheckRemandsDateTopRateProvincial(input)
 
-	if expected != actual {
-		t.Errorf("T38 :expected %v but it got %v", expected, actual)
-	}
-}
-func Test_CheckRemandsDateProvincial_Input_10year_15imprisonDate_ShouldBe_True(t *testing.T) {
-	input := 15
-	expected := false
-	actual := CheckRemandsDateProvincial(input)
-
-	if expected != actual {
-		t.Errorf("T39 :expected %v but it got %v", expected, actual)
-	}
-}
-
-//CheckRemandsDateProvincial_Max10year
-func Test_CheckRemandsDateProvincial_Input_Max10year_0imprisonDate_ShouldBe_True(t *testing.T) {
-	input := 0
-	expected := false
-	actual := CheckRemandsDateProvincial(input)
-
-	if expected != actual {
-		t.Errorf("T44 :expected %v but it got %v", expected, actual)
-	}
-}
-
-func Test_CheckRemandsDateProvincial_Input_Max10year_1imprisonDate_ShouldBe_True(t *testing.T) {
-	input := 1
-	expected := true
-	actual := CheckRemandsDateProvincial(input)
-
-	if expected != actual {
-		t.Errorf("T45 :expected %v but it got %v", expected, actual)
-	}
-}
-
-func Test_CheckRemandsDateProvincial_Input_Max10year_10imprisonDate_ShouldBe_True(t *testing.T) {
-	input := 10
-	expected := true
-	actual := CheckRemandsDateProvincial(input)
-
-	if expected != actual {
-		t.Errorf("T46 :expected %v but it got %v", expected, actual)
-	}
-}
-
-func Test_CheckRemandsDateProvincial_Input_Max10year_15imprisonDate_ShouldBe_True(t *testing.T) {
-	input := 15
-	expected := false
-	actual := CheckRemandsDateProvincial(input)
-
-	if expected != actual {
-		t.Errorf("T47 :expected %v but it got %v", expected, actual)
-	}
+		if expected != actual {
+			t.Errorf("T47 : expected %v but it got %v", expected, actual)
+		}
+	})
 }

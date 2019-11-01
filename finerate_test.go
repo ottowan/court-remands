@@ -2,69 +2,78 @@ package main
 
 import "testing"
 
-func Test_CheckFineRateKwaeng_Input_fine_minus1_ShouldBe_True(t *testing.T) {
-	input := -1
-	expected := false
-	actual := CheckFineRateKwaeng(input)
+func Test_CheckFineRateKwaeng(t *testing.T) {
 
-	if expected != actual {
-		t.Errorf("T7 : expected %v but it got %v", expected, actual)
-	}
-}
-func Test_CheckFineRateKwaeng_Input_fine_30000_ShouldBe_True(t *testing.T) {
-	input := 30000
-	expected := false
-	actual := CheckFineRateKwaeng(input)
+	t.Run("input -1 bath ShouldBe false", func(t *testing.T) {
+		input := -1
+		expected := false
+		actual := CheckFineRateKwaeng(input)
 
-	if expected != actual {
-		t.Errorf("T8 : expected %v but it got %v", expected, actual)
-	}
-}
-func Test_CheckFineRateKwaeng_Input_fine_60001_ShouldBe_True(t *testing.T) {
-	input := 60001
-	expected := true
-	actual := CheckFineRateKwaeng(input)
+		if expected != actual {
+			t.Errorf("T7 : expected %v but it got %v", expected, actual)
+		}
+	})
 
-	if expected != actual {
-		t.Errorf("T9 : expected %v but it got %v", expected, actual)
-	}
-}
+	t.Run("input 30000 bath ShouldBe true", func(t *testing.T) {
+		input := 30000
+		expected := true
+		actual := CheckFineRateKwaeng(input)
 
-//Test CheckFineRateProvincial()
-func Test_CheckFineRateProvincial_Input_fine_minus1_ShouldBe_False(t *testing.T) {
-	input := -1
-	expected := false
-	actual := CheckFineRateProvincial(input)
+		if expected != actual {
+			t.Errorf("T8 : expected %v but it got %v", expected, actual)
+		}
+	})
 
-	if expected != actual {
-		t.Errorf("T24 : expected %v but it got %v", expected, actual)
-	}
-}
-func Test_CheckFineRateProvincial_Input_fine_0_ShouldBe_True(t *testing.T) {
-	input := 0
-	expected := true
-	actual := CheckFineRateProvincial(input)
+	t.Run("input 60001 bath ShouldBe false", func(t *testing.T) {
+		input := 60001
+		expected := false
+		actual := CheckFineRateKwaeng(input)
 
-	if expected != actual {
-		t.Errorf("T25 : expected %v but it got %v", expected, actual)
-	}
-}
-func Test_CheckFineRateProvincial_Input_fine_300_ShouldBe_True(t *testing.T) {
-	input := 300
-	expected := true
-	actual := CheckFineRateProvincial(input)
-
-	if expected != actual {
-		t.Errorf("T26 : expected %v but it got %v", expected, actual)
-	}
+		if expected != actual {
+			t.Errorf("T9 : expected %v but it got %v", expected, actual)
+		}
+	})
 }
 
-func Test_CheckFineRateProvincial_Input_fine_600_ShouldBe_True(t *testing.T) {
-	input := 600
-	expected := true
-	actual := CheckFineRateProvincial(input)
+func Test_CheckFineRateProvincial(t *testing.T) {
 
-	if expected != actual {
-		t.Errorf("T27 : expected %v but it got %v", expected, actual)
-	}
+	t.Run("input -1 bath ShouldBe 0", func(t *testing.T) {
+		input := -1
+		expected := 0
+		actual := CheckFineRateProvincial(input)
+
+		if expected != actual {
+			t.Errorf("T24 : expected %v but it got %v", expected, actual)
+		}
+	})
+
+	t.Run("input 0 bath ShouldBe 1", func(t *testing.T) {
+		input := 0
+		expected := 1
+		actual := CheckFineRateProvincial(input)
+
+		if expected != actual {
+			t.Errorf("T25 : expected %v but it got %v", expected, actual)
+		}
+	})
+
+	t.Run("input 300 bath ShouldBe 1", func(t *testing.T) {
+		input := 300
+		expected := 1
+		actual := CheckFineRateProvincial(input)
+
+		if expected != actual {
+			t.Errorf("T26 : expected %v but it got %v", expected, actual)
+		}
+	})
+
+	t.Run("input 501 bath ShouldBe 2", func(t *testing.T) {
+		input := 501
+		expected := 2
+		actual := CheckFineRateProvincial(input)
+
+		if expected != actual {
+			t.Errorf("T27 : expected %v but it got %v", expected, actual)
+		}
+	})
 }
