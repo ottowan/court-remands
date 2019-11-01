@@ -1,3 +1,5 @@
+
+
 package main
 
 func CheckRemands(courtType string, penaltyRate int, fineRate int, remandsTimes int, remandsDate int) bool {

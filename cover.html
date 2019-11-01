@@ -62,9 +62,11 @@
 				
 				<option value="file3">court-remands/penaltyrate.go (100.0%)</option>
 				
-				<option value="file4">court-remands/remandsdate.go (100.0%)</option>
+				<option value="file4">court-remands/remands.go (65.5%)</option>
 				
-				<option value="file5">court-remands/remandstimes.go (100.0%)</option>
+				<option value="file5">court-remands/remandsdate.go (100.0%)</option>
+				
+				<option value="file6">court-remands/remandstimes.go (100.0%)</option>
 				
 				</select>
 			</div>
@@ -80,14 +82,14 @@
 		
 		<pre class="file" id="file0" style="display: none">package main
 
-func CheckCourtType(input string) bool <span class="cov8" title="1">{
+func CheckCourtType(input string) int <span class="cov8" title="1">{
         if input == "kwaeng" </span><span class="cov8" title="1">{
-                return true
+                return 1
         }</span> else<span class="cov8" title="1"> if input == "provincial" </span><span class="cov8" title="1">{
 
-                return true
+                return 2
         }</span>
-        <span class="cov8" title="1">return false</span>
+        <span class="cov8" title="1">return 0</span>
 }
 </pre>
 		
@@ -126,6 +128,7 @@ func GetMainEngine() *gin.Engine <span class="cov8" title="1">{
         v1 := r.Group("/v1")
         </span><span class="cov8" title="1">{
                 v1.GET("/ping", ping)
+                //v1.POST("/")
         }</span>
         <span class="cov8" title="1">return r</span>
 }
@@ -163,6 +166,67 @@ func CheckPenalityRateProvincial(input int) int <span class="cov8" title="1">{
 		
 		<pre class="file" id="file4" style="display: none">package main
 
+func CheckRemands(courtType string, penaltyRate int, fineRate int, remandsTimes int, remandsDate int) bool <span class="cov8" title="1">{
+
+        //Validate kwaeng court
+        if CheckCourtType(courtType) == 1 </span><span class="cov8" title="1">{
+                if CheckPenalityRateKwaeng(penaltyRate) &amp;&amp; CheckFineRateKwaeng(fineRate) </span><span class="cov8" title="1">{
+
+                        if CheckRemandsTimesKwaeng(remandsTimes) </span><span class="cov8" title="1">{
+                                if CheckRemandsDateKwaeng(remandsDate) </span><span class="cov8" title="1">{
+                                        return true
+                                }</span> else<span class="cov0" title="0"> {
+                                        return false
+                                }</span>
+                        } else<span class="cov0" title="0"> {
+                                return false
+                        }</span>
+                } else<span class="cov8" title="1"> {
+                        return false
+                }</span>
+        } else<span class="cov8" title="1"> if CheckCourtType(courtType) == 2 </span><span class="cov8" title="1">{
+
+                if CheckPenalityRateProvincial(penaltyRate) == 1 &amp;&amp; CheckFineRateProvincial(fineRate) == 1 </span><span class="cov8" title="1">{
+                        if CheckRemandsTimesLessRatesProvincial(remandsTimes) </span><span class="cov8" title="1">{
+                                if CheckRemandsDateLessRateProvincial(remandsDate) </span><span class="cov8" title="1">{
+                                        return true
+                                }</span> else<span class="cov0" title="0"> {
+                                        return false
+                                }</span>
+                        } else<span class="cov0" title="0"> {
+                                return false
+                        }</span>
+                } else<span class="cov8" title="1"> if CheckPenalityRateProvincial(penaltyRate) == 2 &amp;&amp; CheckFineRateProvincial(fineRate) == 2 </span><span class="cov8" title="1">{
+                        if CheckRemandsTimesMiddleRateProvincial(remandsTimes) </span><span class="cov8" title="1">{
+                                if CheckRemandsDateMiddleRateProvincial(remandsDate) </span><span class="cov8" title="1">{
+                                        return true
+                                }</span> else<span class="cov0" title="0"> {
+                                        return false
+                                }</span>
+                        } else<span class="cov0" title="0"> {
+                                return false
+                        }</span>
+                } else<span class="cov8" title="1"> if CheckPenalityRateProvincial(fineRate) == 3 </span><span class="cov8" title="1">{
+                        if CheckRemandsTimesTopRateProvincial(remandsTimes) </span><span class="cov8" title="1">{
+                                if CheckRemandsDateTopRateProvincial(remandsDate) </span><span class="cov8" title="1">{
+                                        return true
+                                }</span> else<span class="cov0" title="0"> {
+                                        return false
+                                }</span>
+                        } else<span class="cov0" title="0"> {
+                                return false
+                        }</span>
+                }
+
+                <span class="cov0" title="0">return false</span>
+        }
+
+        <span class="cov0" title="0">return false</span>
+}
+</pre>
+		
+		<pre class="file" id="file5" style="display: none">package main
+
 func CheckRemandsDateKwaeng(input int) bool <span class="cov8" title="1">{
         if input &gt;= 1 &amp;&amp; input &lt;= 6 </span><span class="cov8" title="1">{
                 return true
@@ -192,7 +256,7 @@ func CheckRemandsDateTopRateProvincial(input int) bool <span class="cov8" title=
 }
 </pre>
 		
-		<pre class="file" id="file5" style="display: none">package main
+		<pre class="file" id="file6" style="display: none">package main
 
 func CheckRemandsTimesKwaeng(input int) bool <span class="cov8" title="1">{
         if input &gt;= 1 &amp;&amp; input &lt;= 5 </span><span class="cov8" title="1">{

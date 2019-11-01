@@ -23,6 +23,9 @@
     go run main.go
     
     เข้าหน้าเพจ URL : http://localhost
+
+    // +build integration
+
     
 
   [Reference]

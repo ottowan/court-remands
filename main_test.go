@@ -1,4 +1,4 @@
-// +build systemtest
+// +build mock_api
 
 package main
 
@@ -10,20 +10,6 @@ import (
 
 	"github.com/gin-gonic/gin"
 )
-
-// func Test_ping(t *testing.T) {
-// 	t.Run("Call API /ping ShouldBe 200ok", func(t *testing.T) {
-// 		request, _ := http.NewRequest(http.MethodGet, "/ping", nil)
-// 		response := httptest.NewRecorder()
-
-// 		got := response.Body.String()
-// 		want := "20"
-
-// 		if got != want {
-// 			t.Errorf("got %q, want %q", got, want)
-// 		}
-// 	})
-// }
 
 func performRequest(r http.Handler, method, path string) *httptest.ResponseRecorder {
 	req, _ := http.NewRequest(method, path, nil)
