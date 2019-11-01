@@ -2,7 +2,7 @@ package main
 
 func CheckFineRateKwaeng(input int) bool {
 
-	if input > -1 && input < 60001 {
+	if input >= 0 && input <= 60000 {
 		return true
 	}
 	return false
@@ -10,9 +10,9 @@ func CheckFineRateKwaeng(input int) bool {
 
 func CheckFineRateProvincial(input int) int {
 
-	if input > -1 && input <= 500 {
+	if input >= 0 && input <= 500 {
 		return 1
-	} else if input > 500 {
+	} else if input >= 501 {
 		return 2
 	}
 	return 0

@@ -77,7 +77,7 @@ func Test_CheckPenalityRateProvincial(t *testing.T) {
 		}
 	})
 
-	t.Run("input 7 month ShouldBe 1", func(t *testing.T) {
+	t.Run("input 7 month ShouldBe 2", func(t *testing.T) {
 		input := 7
 		expected := 2
 		actual := CheckPenalityRateProvincial(input)
@@ -87,7 +87,7 @@ func Test_CheckPenalityRateProvincial(t *testing.T) {
 		}
 	})
 
-	t.Run("input 60 month (5y) ShouldBe 1", func(t *testing.T) {
+	t.Run("input 60 month (5y) ShouldBe 2", func(t *testing.T) {
 		input := 60
 		expected := 2
 		actual := CheckPenalityRateProvincial(input)
@@ -97,7 +97,7 @@ func Test_CheckPenalityRateProvincial(t *testing.T) {
 		}
 	})
 
-	t.Run("input 120 month (10y) ShouldBe 1", func(t *testing.T) {
+	t.Run("input 120 month (10y) ShouldBe 2", func(t *testing.T) {
 		input := 120
 		expected := 2
 		actual := CheckPenalityRateProvincial(input)
@@ -107,7 +107,7 @@ func Test_CheckPenalityRateProvincial(t *testing.T) {
 		}
 	})
 
-	t.Run("input 121 month (10y) ShouldBe 1", func(t *testing.T) {
+	t.Run("input 121 month (10y1m) ShouldBe 3", func(t *testing.T) {
 		input := 121
 		expected := 3
 		actual := CheckPenalityRateProvincial(input)
