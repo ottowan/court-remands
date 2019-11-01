@@ -1,4 +1,4 @@
-package main
+package remands
 
 func CheckRemandsDateKwaeng(input int) bool {
 	if input >= 1 && input <= 6 {

@@ -1,5 +1,3 @@
-// +build mock_api
-
 package main
 
 import (
@@ -46,6 +44,31 @@ func Test_ping(t *testing.T) {
 			t.Errorf(" expected %v but it got %v", "not nil", err)
 		}
 	})
+
+	t.Run("Expected body['message'] equal response['message']", func(test *testing.T) {
+
+		expected := body["message"]
+		actual := response["message"]
+		if expected != actual {
+			t.Errorf(" expected %v but it got %v", expected, actual)
+		}
+	})
+}
+
+func Test_RemandsAPI(t *testing.T) {
+	// Build our expected body
+	body := gin.H{
+		"message": "pong",
+	}
+
+	// Grab our router
+	router := GetMainEngine()
+	// Perform a GET request with that handler.
+	w := performRequest(router, "POST", "/v1/remands")
+
+	// Test Convert the JSON response to a map
+	var response map[string]string
+	json.Unmarshal([]byte(w.Body.String()), &response)
 
 	t.Run("Expected body['message'] equal response['message']", func(test *testing.T) {
 

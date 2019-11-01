@@ -1,8 +1,10 @@
-// +build integration
 
-package main
 
-import "testing"
+package remandsintegration
+
+import (
+	"testing"
+)
 
 func Test_CheckRemandsKwaeng(t *testing.T) {
 	t.Run("Input courtType:kwaeng penaltyRate:12month fineRate:30,000bath remandsTimes:1times remandsDate:5day Shoudbe true", func(t *testing.T) {

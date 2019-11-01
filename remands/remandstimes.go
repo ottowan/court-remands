@@ -1,4 +1,4 @@
-package main
+package remands
 
 func CheckRemandsTimesKwaeng(input int) bool {
 	if input >= 1 && input <= 5 {

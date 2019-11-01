@@ -1,4 +1,4 @@
-package main
+package remands
 
 func CheckFineRateKwaeng(input int) bool {
 

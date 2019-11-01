@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <h2>ผัดฟ้อง/ฝากขัง</h2>
+
+    <form method="POST" action="http://localhost:8080/v1/remands">
+        <select name="court_type">
+            <option value="1">ศาลแขวง</option>
+            <option value="2">ศาลจังหวัด</option>
+        </select>
+        <br><br>
+        อัตราโทษ:<br>
+        <input type="text" name="penalty_rate" value="12"> เดือน
+        <br><br>
+        อัตราค่าปรับ:<br>
+        <input type="text" name="fine_rate" value="30000"> บาท
+        <br><br>
+        ครั้งที่ ผัดฟ้อง/ฝากขัง:<br>
+        <input type="text" name="remands_times" value="1">
+        <br><br>
+        วันที่ ผัดฟ้อง/ฝากขัง:<br>
+        <input type="text" name="remands_date" value="5"> วัน
+        <br><br>
+        <input type="submit" value="Submit">
+    </form>
+
+    <p>If you click the "Submit" button, the form-data will be sent to a page called "/action_page.php".</p>
+
+</body>
+
+</html>

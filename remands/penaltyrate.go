@@ -1,4 +1,4 @@
-package main
+package remands
 
 func CheckPenalityRateKwaeng(input int) bool {
 
