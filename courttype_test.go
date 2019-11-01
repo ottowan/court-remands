@@ -15,7 +15,7 @@ func Test_CheckCourtType(t *testing.T) {
 	})
 
 	t.Run("input provincial ShouldBe true", func(t *testing.T) {
-		input := "kwaeng"
+		input := "provincial"
 		expected := true
 		actual := CheckCourtType(input)
 
