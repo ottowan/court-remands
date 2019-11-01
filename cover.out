@@ -1,0 +1,12 @@
+mode: set
+court-remands/remandsdate.go:3.45,5.2 1 1
+court-remands/remandsdate.go:7.49,9.2 1 1
+court-remands/remandstimes.go:3.46,5.2 1 1
+court-remands/remandstimes.go:7.50,9.2 1 1
+court-remands/courttype.go:3.40,5.2 1 1
+court-remands/finerate.go:3.42,5.2 1 1
+court-remands/finerate.go:7.46,9.2 1 1
+court-remands/main.go:5.13,9.2 3 0
+court-remands/main.go:11.27,16.2 1 0
+court-remands/penaltyrate.go:3.46,5.2 1 1
+court-remands/penaltyrate.go:7.50,9.2 1 1
