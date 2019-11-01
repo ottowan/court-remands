@@ -57,7 +57,7 @@ func Test_CheckPenalityRateProvincial(t *testing.T) {
 		}
 	})
 
-	t.Run("input 3 month bath ShouldBe 1", func(t *testing.T) {
+	t.Run("input 3 month ShouldBe 1", func(t *testing.T) {
 		input := 3
 		expected := 1
 		actual := CheckPenalityRateProvincial(input)
