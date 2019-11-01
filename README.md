@@ -24,5 +24,6 @@
     
     เข้าหน้าเพจ URL : http://localhost
     
-    
-    
+
+  [Reference]
+    https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/arrays-and-slices
