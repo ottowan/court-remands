@@ -58,7 +58,7 @@
 				
 				<option value="file1">court-remands/finerate.go (100.0%)</option>
 				
-				<option value="file2">court-remands/main.go (0.0%)</option>
+				<option value="file2">court-remands/main.go (85.7%)</option>
 				
 				<option value="file3">court-remands/penaltyrate.go (100.0%)</option>
 				
@@ -81,9 +81,7 @@
 		<pre class="file" id="file0" style="display: none">package main
 
 func CheckCourtType(input string) bool <span class="cov8" title="1">{
-
         if input == "kwaeng" </span><span class="cov8" title="1">{
-
                 return true
         }</span> else<span class="cov8" title="1"> if input == "provincial" </span><span class="cov8" title="1">{
 
@@ -96,12 +94,22 @@ func CheckCourtType(input string) bool <span class="cov8" title="1">{
 		<pre class="file" id="file1" style="display: none">package main
 
 func CheckFineRateKwaeng(input int) bool <span class="cov8" title="1">{
-        return false
-}</span>
+
+        if input &gt;= 0 &amp;&amp; input &lt;= 60000 </span><span class="cov8" title="1">{
+                return true
+        }</span>
+        <span class="cov8" title="1">return false</span>
+}
 
 func CheckFineRateProvincial(input int) int <span class="cov8" title="1">{
-        return 0
-}</span>
+
+        if input &gt;= 0 &amp;&amp; input &lt;= 500 </span><span class="cov8" title="1">{
+                return 1
+        }</span> else<span class="cov8" title="1"> if input &gt;= 501 </span><span class="cov8" title="1">{
+                return 2
+        }</span>
+        <span class="cov8" title="1">return 0</span>
+}
 </pre>
 		
 		<pre class="file" id="file2" style="display: none">package main
@@ -109,12 +117,20 @@ func CheckFineRateProvincial(input int) int <span class="cov8" title="1">{
 import "github.com/gin-gonic/gin"
 
 func main() <span class="cov0" title="0">{
-        r := gin.Default()
-        r.GET("/ping", ping)
-        r.Run() // listen and serve on 0.0.0.0:8080 (for windows "localhost:8080")
+        GetMainEngine().Run(":8080")
 }</span>
 
-func ping(c *gin.Context) <span class="cov0" title="0">{
+func GetMainEngine() *gin.Engine <span class="cov8" title="1">{
+        r := gin.Default()
+
+        v1 := r.Group("/v1")
+        </span><span class="cov8" title="1">{
+                v1.GET("/ping", ping)
+        }</span>
+        <span class="cov8" title="1">return r</span>
+}
+
+func ping(c *gin.Context) <span class="cov8" title="1">{
         c.JSON(200, gin.H{
                 "message": "pong",
         })
@@ -125,50 +141,86 @@ func ping(c *gin.Context) <span class="cov0" title="0">{
 		<pre class="file" id="file3" style="display: none">package main
 
 func CheckPenalityRateKwaeng(input int) bool <span class="cov8" title="1">{
-        return false
-}</span>
+
+        if input &gt;= 0 &amp;&amp; input &lt; 37 </span><span class="cov8" title="1">{
+                return true
+        }</span>
+        <span class="cov8" title="1">return false</span>
+}
 
 func CheckPenalityRateProvincial(input int) int <span class="cov8" title="1">{
-        return 0
-}</span>
+
+        if input &gt;= 0 &amp;&amp; input &lt;= 6 </span><span class="cov8" title="1">{
+                return 1
+        }</span> else<span class="cov8" title="1"> if input &gt;= 7 &amp;&amp; input &lt;= 120 </span><span class="cov8" title="1">{
+                return 2
+        }</span> else<span class="cov8" title="1"> if input &gt;= 121 </span><span class="cov8" title="1">{
+                return 3
+        }</span>
+        <span class="cov8" title="1">return 0</span>
+}
 </pre>
 		
 		<pre class="file" id="file4" style="display: none">package main
 
 func CheckRemandsDateKwaeng(input int) bool <span class="cov8" title="1">{
-        return false
-}</span>
+        if input &gt;= 1 &amp;&amp; input &lt;= 6 </span><span class="cov8" title="1">{
+                return true
+        }</span>
+        <span class="cov8" title="1">return false</span>
+}
 
 func CheckRemandsDateLessRateProvincial(input int) bool <span class="cov8" title="1">{
-        return false
-}</span>
+        if input &gt;= 1 &amp;&amp; input &lt;= 7 </span><span class="cov8" title="1">{
+                return true
+        }</span>
+        <span class="cov8" title="1">return false</span>
+}
 
 func CheckRemandsDateMiddleRateProvincial(input int) bool <span class="cov8" title="1">{
-        return false
-}</span>
+        if input &gt;= 1 &amp;&amp; input &lt;= 12 </span><span class="cov8" title="1">{
+                return true
+        }</span>
+        <span class="cov8" title="1">return false</span>
+}
 
 func CheckRemandsDateTopRateProvincial(input int) bool <span class="cov8" title="1">{
-        return false
-}</span>
+        if input &gt;= 1 &amp;&amp; input &lt;= 12 </span><span class="cov8" title="1">{
+                return true
+        }</span>
+        <span class="cov8" title="1">return false</span>
+}
 </pre>
 		
 		<pre class="file" id="file5" style="display: none">package main
 
 func CheckRemandsTimesKwaeng(input int) bool <span class="cov8" title="1">{
-        return false
-}</span>
+        if input &gt;= 1 &amp;&amp; input &lt;= 5 </span><span class="cov8" title="1">{
+                return true
+        }</span>
+        <span class="cov8" title="1">return false</span>
+}
 
 func CheckRemandsTimesLessRatesProvincial(input int) bool <span class="cov8" title="1">{
-        return false
-}</span>
+        if input == 1 </span><span class="cov8" title="1">{
+                return true
+        }</span>
+        <span class="cov8" title="1">return false</span>
+}
 
 func CheckRemandsTimesMiddleRateProvincial(input int) bool <span class="cov8" title="1">{
-        return false
-}</span>
+        if input &gt;= 1 &amp;&amp; input &lt;= 4 </span><span class="cov8" title="1">{
+                return true
+        }</span>
+        <span class="cov8" title="1">return false</span>
+}
 
 func CheckRemandsTimesTopRateProvincial(input int) bool <span class="cov8" title="1">{
-        return false
-}</span>
+        if input &gt;= 1 &amp;&amp; input &lt;= 7 </span><span class="cov8" title="1">{
+                return true
+        }</span>
+        <span class="cov8" title="1">return false</span>
+}
 </pre>
 		
 		</div>
