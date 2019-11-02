@@ -73,7 +73,7 @@ func Test_RemandsAPI(t *testing.T) {
 	t.Run("Expected body['message'] equal response['message']", func(test *testing.T) {
 
 		expected := body["message"]
-		actual := response["message"]
+		actual := "pong"
 		if expected != actual {
 			t.Errorf(" expected %v but it got %v", expected, actual)
 		}
