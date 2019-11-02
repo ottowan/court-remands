@@ -2,7 +2,6 @@ package remandsintegration
 
 import (
 	"court-remands/remands"
-	"fmt"
 )
 
 func CheckRemands(courtType string, penaltyRate int, fineRate int, remandsTimes int, remandsDate int) bool {
@@ -64,11 +63,11 @@ func CheckRemands(courtType string, penaltyRate int, fineRate int, remandsTimes 
 }
 func CheckRemandsAPI(courtType int, penaltyRate int, fineRate int, remandsTimes int, remandsDate int) bool {
 
-	fmt.Println(courtType)
-	fmt.Println(penaltyRate)
-	fmt.Println(fineRate)
-	fmt.Println(remandsTimes)
-	fmt.Println(remandsDate)
+	// fmt.Println(courtType)
+	// fmt.Println(penaltyRate)
+	// fmt.Println(fineRate)
+	// fmt.Println(remandsTimes)
+	// fmt.Println(remandsDate)
 
 	//Validate kwaeng court
 	//fmt.Println("CALL : " + strconv.Itoa(remands.CheckCourtType(courtType)))
